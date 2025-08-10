@@ -9,6 +9,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Backend only**: `cd backend && uv run uvicorn app:app --reload --port 8000`
 - **Dependencies**: `uv sync` (installs all Python dependencies)
 
+### Code Quality & Formatting
+- **Format code**: `python3 scripts/format.py` (formats all Python files with Black)
+- **Check formatting**: `python3 scripts/format.py --check` (checks if code is properly formatted)
+- **Quality checks**: `python3 scripts/quality.py` (runs all code quality checks)
+- **Manual formatting**: `python3 -m black backend/ main.py` (direct Black usage)
+
 ### Environment Setup
 - Create `.env` file with `ANTHROPIC_API_KEY=your_key_here`
 - Python 3.13+ required
@@ -70,6 +76,8 @@ This is a Retrieval-Augmented Generation (RAG) chatbot system with the following
 
 ## Development Notes
 
+- **Code Quality**: Black is configured for automatic code formatting (88-char line length)
+- **Formatting**: All Python code should be formatted with Black before committing
 - No test framework currently configured
 - Uses ChromaDB for local vector storage (no external dependencies)
 - Course documents supported: PDF, DOCX, TXT
